@@ -4,7 +4,7 @@ if [ -n $1 ]; then
 else
 	filename="capture.jpg"
 fi
-while ffmpeg -y -ss 00:00:0.7 -i /dev/video0 -vframes 1 -q:v 2 $filename 2>&1 | grep "Invalid data found when processing input" 1>/dev/null
+while ffmpeg -y -ss 00:00:1 -i /dev/video0 -vframes 1 -q:v 0 $filename 2>&1 | grep "Invalid data found when processing input" 1>/dev/null
 do
 	echo "Failed grabbing the screen, let's try again" >&2
 done
